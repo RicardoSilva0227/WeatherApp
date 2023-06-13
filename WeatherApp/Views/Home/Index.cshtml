@@ -2,7 +2,276 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <section class="vh-100">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-12 col-xl-10">
+
+                            <div class="card shadow-0 border border-dark border-5 text-dark" style="border-radius: 10px;">
+                                <div class="card-body p-4">
+
+                                    <div class="row text-center">
+                                        <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                                             style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                                            <div class="d-flex justify-content-around mt-3">
+                                                <p class="small"><div id="country"></div></p>
+                                                <p class="small">21.02.2021</p>
+                                                <p class="small">Rain map</p>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                                                <p class="fw-bold mb-0" style="font-size: 7rem;">-4°C</p>
+                                                <div class="text-start">
+                                                    <p class="small">10:00</p>
+                                                    <p class="h3 mb-3">Sunday</p>
+                                                    <p class="small mb-0">Cloudy</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center mb-3">
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                                <div class="flex-column border" style="border-radius: 10px; padding: .75rem">
+                                                    <p class="small mb-1">Sun</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Mon</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Tue</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Wed</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Thu</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Fri</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Sat</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 text-end">
+                                            <p class="small mt-3 mb-5 pb-5">For a month</p>
+                                            <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
+                                            <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section class="vh-100">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-12 col-xl-10">
+
+                            <div class="card shadow-0 border border-dark border-5 text-dark" style="border-radius: 10px;">
+                                <div class="card-body p-4">
+
+                                    <div class="row text-center">
+                                        <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                                             style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                                            <div class="d-flex justify-content-around mt-3">
+                                                <p class="small"><div id="country"></div></p>
+                                                <p class="small">21.02.2021</p>
+                                                <p class="small">Rain map</p>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                                                <p class="fw-bold mb-0" style="font-size: 7rem;">-4°C</p>
+                                                <div class="text-start">
+                                                    <p class="small">10:00</p>
+                                                    <p class="h3 mb-3">Sunday</p>
+                                                    <p class="small mb-0">Cloudy</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center mb-3">
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                                <div class="flex-column border" style="border-radius: 10px; padding: .75rem">
+                                                    <p class="small mb-1">Sun</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Mon</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Tue</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Wed</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Thu</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Fri</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Sat</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 text-end">
+                                            <p class="small mt-3 mb-5 pb-5">For a month</p>
+                                            <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
+                                            <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="carousel-item">
+            <section class="vh-100">
+                <div class="container py-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-md-12 col-xl-10">
+
+                            <div class="card shadow-0 border border-dark border-5 text-dark" style="border-radius: 10px;">
+                                <div class="card-body p-4">
+
+                                    <div class="row text-center">
+                                        <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                                             style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                                            <div class="d-flex justify-content-around mt-3">
+                                                <p class="small"><div id="country"></div></p>
+                                                <p class="small">21.02.2021</p>
+                                                <p class="small">Rain map</p>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center py-5 my-4">
+                                                <p class="fw-bold mb-0" style="font-size: 7rem;">-4°C</p>
+                                                <div class="text-start">
+                                                    <p class="small">10:00</p>
+                                                    <p class="h3 mb-3">Sunday</p>
+                                                    <p class="small mb-0">Cloudy</p>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-around align-items-center mb-3">
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                                <div class="flex-column border" style="border-radius: 10px; padding: .75rem">
+                                                    <p class="small mb-1">Sun</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Mon</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Tue</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Wed</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Thu</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Fri</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <p class="small mb-1">Sat</p>
+                                                    <p class="small mb-0"><strong>-4°C</strong></p>
+                                                </div>
+                                                <div class="flex-column">
+                                                    <i class="fas fa-minus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 text-end">
+                                            <p class="small mt-3 mb-5 pb-5">For a month</p>
+                                            <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
+                                            <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
+                                            <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
+
+
+<script>
+    window.addEventListener('load', function () {
+        getLocation();
+    })
+</script>
+
+

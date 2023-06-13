@@ -1,4 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Request is not supported by this browser.");
+    }
+}
 
-// Write your JavaScript code.
+function showPosition(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    var NominatimAPIRequest = "https://nominatim.openstreetmap.org/reverse?format=json&lat=LATITUDE&lon=LONGITUDE";
+    NominatimAPIRequest = NominatimAPIRequest.replace("LATITUDE", latitude).replace("LONGITUDE", longitude);
+
+    debugger;
+    fetch(NominatimAPIRequest)
+        .then(response => response.json())
+        .then(data => {
+            var country = data.address.country;
+            document.getElementById("country").textContent = country;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
