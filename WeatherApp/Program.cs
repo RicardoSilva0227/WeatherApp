@@ -1,7 +1,27 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using WeatherApp.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+
+// Retrieve the API key from configuration
+string apiKey = configuration.GetValue<string>("WeatherApiKey");
+string baseUrl = configuration.GetValue<string>("WeatherApiKey");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+// Add services to the container
+builder.Services.AddScoped<WeatherRepository>(provider =>
+    new WeatherRepository(
+        new HttpClient(),
+            apiKey,
+            "http://api.openweathermap.org/data/2.5/weather"
+    ));
 
 var app = builder.Build();
 
@@ -9,7 +29,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
