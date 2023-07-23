@@ -29,8 +29,6 @@
                 return weatherData;
             }
 
-            // Handle error cases
-            // You can throw an exception or return null/empty data based on your needs
             return null;
         }
 

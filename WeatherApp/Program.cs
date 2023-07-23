@@ -10,18 +10,10 @@ var configuration = builder.Configuration;
 
 // Retrieve the API key from configuration
 string apiKey = configuration.GetValue<string>("WeatherApiKey");
-string baseUrl = configuration.GetValue<string>("WeatherApiKey");
+string baseUrl = configuration.GetValue<string>("WeatherMapApiUrl");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
-// Add services to the container
-builder.Services.AddScoped<WeatherRepository>(provider =>
-    new WeatherRepository(
-        new HttpClient(),
-            apiKey,
-            "http://api.openweathermap.org/data/2.5/weather"
-    ));
 
 var app = builder.Build();
 

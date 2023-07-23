@@ -8,10 +8,12 @@
         /// <summary>
         /// Rain, Sunny ...
         /// </summary>
+       
         public string?  description{ get; set; }
         public float Temperature { get; set; }
         public float TempMax { get; set; }
         public float TempMin { get; set; }
+
         /// <summary>
         /// how does the temperature feels like
         /// </summary>

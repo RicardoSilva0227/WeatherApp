@@ -1,8 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -16,15 +14,15 @@
                                  style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
                                 <div class="d-flex justify-content-around mt-3">
                                     <p class="small"><div id="country"></div></p>
-                                    <p class="small">21.02.2021</p>
+                                    <p class="small" id="todaysDate"></p>
                                     <p class="small">Rain map</p>
                                 </div>
                                 <div class="d-flex justify-content-around align-items-center py-5 my-4">
-                                    <p class="fw-bold mb-0" style="font-size: 7rem;">-4°C</p>
+                                    <p class="fw-bold mb-0" style="font-size: 7rem;" id="todayTemp"></p>
                                     <div class="text-start">
                                         <p class="small">10:00</p>
                                         <p class="h3 mb-3">Sunday</p>
-                                        <p class="small mb-0">Cloudy</p>
+                                        <p class="small mb-0" id="weatherStatus"></p>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-around align-items-center mb-3">
@@ -86,12 +84,11 @@
 
 
 <script>
-    window.addEventListener('load', function () {
-        getLocation();
-
+    $(document).ready(function () {
         
-    })
-
+        getLocation();
+        getWeatherData();
+    });
 </script>
 
 
