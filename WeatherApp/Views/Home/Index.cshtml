@@ -1,6 +1,23 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+<style>
+    /* CSS for the loading animation */
+    #loading {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+</style>
+<div id="loading">Loading...</div>
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -10,18 +27,18 @@
                     <div class="card-body p-4">
 
                         <div class="row text-center">
-                            <div class="col-md-9 text-center border-end border-5 border-dark py-4"
+                            <div class="col-md-12 text-center border-5 border-dark py-4"
                                  style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
                                 <div class="d-flex justify-content-around mt-3">
                                     <p class="small"><div id="country"></div></p>
                                     <p class="small" id="todaysDate"></p>
-                                    <p class="small">Rain map</p>
+                                    <p class="small">Weather Map</p>
                                 </div>
                                 <div class="d-flex justify-content-around align-items-center py-5 my-4">
                                     <p class="fw-bold mb-0" style="font-size: 7rem;" id="todayTemp"></p>
                                     <div class="text-start">
-                                        <p class="small">10:00</p>
-                                        <p class="h3 mb-3">Sunday</p>
+                                        <p class="small" id="currentTime"></p>
+                                        <p class="h3 mb-3" id="currentDayOfTheWeek"></p>
                                         <p class="small mb-0" id="weatherStatus"></p>
                                     </div>
                                 </div>
@@ -61,17 +78,7 @@
                                         <i class="fas fa-minus"></i>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3 text-end">
-                                <p class="small mt-3 mb-5 pb-5">For a month</p>
-                                <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
-                                <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
-                                <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
-                                <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
-                                <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
-                                <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
-                                <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
-                            </div>
+                            </div>                            
                         </div>
 
                     </div>
@@ -85,9 +92,9 @@
 
 <script>
     $(document).ready(function () {
-        
+        $("#loading").show();
         getLocation();
-        getWeatherData();
+        //getWeatherData();
     });
 </script>
 

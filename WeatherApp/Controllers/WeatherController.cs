@@ -23,29 +23,43 @@ namespace WeatherApp.Controllers
             _configuration = configuration;
         }
 
-        public async Task<ActionResult> GetWeather()
+        public async Task<ActionResult> GetWeather(string latitude, string longitude)
         {
             string apiKey = _configuration["WeatherApiKey"];
             string apiUrl = _configuration["WeatherMapApiUrl"];
 
-            string requestUrl = $"{apiUrl}?q=Lisbon,pt&appid={apiKey}";
+            string units = "metric";
 
-            HttpResponseMessage response = await _httpClient.GetAsync(requestUrl);
-
-            if (response.IsSuccessStatusCode)
+            if (latitude != string.Empty && longitude != string.Empty)
             {
-                string jsonResult = await response.Content.ReadAsStringAsync();
+                string requestUrl = $"{apiUrl}?lat={latitude}&lon={longitude}&units={units}&appid={apiKey}";
 
-                // Handle the JSON result here (e.g., parse and display the weather data)
-                // You can use libraries like Newtonsoft.Json to parse the JSON
+                HttpResponseMessage response = await _httpClient.GetAsync(requestUrl);
 
-                return Content(jsonResult, "application/json");
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResult = await response.Content.ReadAsStringAsync();
+
+                    // Handle the JSON result here (e.g., parse and display the weather data)
+                    // You can use libraries like Newtonsoft.Json to parse the JSON
+
+                    return Content(jsonResult, "application/json");
+                }
+                else
+                {
+                    // Handle the API request failure here (e.g., log an error message)
+                    return Content("API request failed");
+                }
             }
             else
             {
-                // Handle the API request failure here (e.g., log an error message)
-                return Content("API request failed");
+                return BadRequest("Latitude and longitude could not be provided.");
             }
+
+
+
+
+           
         }
     }
 }
