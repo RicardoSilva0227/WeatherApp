@@ -2,22 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
-<style>
-    /* CSS for the loading animation */
-    #loading {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-</style>
-<div id="loading">Loading...</div>
+
+
+
+<div class="spinner-wrapper">
+    <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
 <section class="vh-100">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -80,9 +73,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#loading").show();
         getLocation();
-        //getWeatherData();
     });
 </script>
 

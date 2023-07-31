@@ -1,4 +1,5 @@
-﻿
+﻿const spinnerWrapperEl = document.querySelector('.spinner-wrapper');
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getLatitudeAndLongitudeValues);
@@ -24,16 +25,16 @@ function getWeatherData(latitude, longitude) {
             longitude: longitude
         },
         success: function (data) {
-            // Handle the API response here
-            console.log(data);
-
             processWeatherData(data);
-            $("#loading").hide();
+
+            spinnerWrapperEl.style.opacity = '0';
+            setTimeout(() => {
+                spinnerWrapperEl.style.display = 'none';
+            }, 200);
 
         },
         error: function () {
             alert("Request failed");
-            $("#loading").hide();
         }
     });
 }
@@ -140,6 +141,6 @@ function processWeatherData(data) {
             $("#" + nextDayElement.tempId + " strong").text(nextDayTemp + " ºC");
         }
     } else {
-        console.log("No data found for today.");
+        alert("No data was found about your current location");
     }
 }
